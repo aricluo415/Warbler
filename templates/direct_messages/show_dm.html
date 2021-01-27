@@ -1,0 +1,37 @@
+{% extends 'users/detail.html' %} {% block user_details %}
+<div class="container">
+    <div class="row justify-content-center mb-4">
+        <div class="col-sm-6">
+            <ul class="list-group" id="messages">
+
+                {% for message in messages %} {% if message.user_from_id == g.user.id %}
+                <li class="list-group-item mt-2 ml-auto rounded bg-primary text-white">
+                    <p class="ml-auto">{{message.user_from_id}} : {{message.msg}}</p>
+                </li>
+                {% else %}
+                <li class="list-group-item mt-2 mr-auto rounded bg-secondary text-white">
+                    <p class="mr-auto">{{message.user_from_id}} : {{message.msg}}</p>
+                </li>
+                {% endif %} {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <form method="POST">
+                {{ form.csrf_token }}
+                <div>
+                    {% if form.text.errors %} {% for error in form.text.errors %}
+                    <span class="text-danger">
+                {{ error }}
+              </span> {% endfor %} {% endif %} {{ form.text(placeholder="What's happening?", class="form-control", rows="3") }}
+                </div>
+                <button class="btn btn-outline-success btn-block">Add my message!</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

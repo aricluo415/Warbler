@@ -1,0 +1,1461 @@
+INSERT INTO products (name, price, can_be_returned)
+VALUES ('stool', 25.99, false);
+INSERT INTO products (name, price, can_be_returned)
+VALUES ('table', 124.00, false);
+SELECT * FROM products;
+UPDATE products SET can_be_returned = true WHERE id = 2;
+SELECT * FROM products;
+SELECT name FROM products;
+SELECT name, price FROM products;
+INSERT INTO products (name, price, can_be_returned)
+VALUES ('desk', 50.99, false);
+SELECT name, price FROM products;
+SELECT name FROM products
+WHERE can_be_returned
+;
+SELECT name FROM products
+WHERE can_be_returned
+;
+SELECT name FROM products
+WHERE price < 44.00;
+SELECT name FROM products
+WHERE price BETWEEN 22.50 AND 99.99;
+UPDATE products SET price = price - 20.00;
+SELECT * FROM products
+;
+DELETE FROM products
+WHERE price < 25.00;
+SELECT * FROM products
+;
+SELECT * FROM products
+;
+UPDATE products SET price = price + 20.00;
+SELECT * FROM products
+;
+UPDATE products SET can_be_returned = true;
+SELECT * FROM products
+;
+\q
+\d
+SELECT * FROM analytics
+;
+SELECT * FROM analytics
+WHERE id = 1880;
+SELECT * FROM analytics
+WHERE last_updated > '2018-08-01';
+SELECT app_name FROM analytics
+WHERE last_updated > '2018-08-01';
+SELECT app_name, last_updated FROM analytics
+WHERE last_updated > '2018-08-01';
+SELECT * FROM analytics
+WHERE last_updated > '2018-08-01';
+SELECT app_name, COUNT(category) AS count FROM analytics;
+SELECT * FROM analytics
+WHERE last_updated > '2018-08-01';
+SELECT app_name, COUNT(category) AS count FROM analytics
+GROUP BY app_name;
+SELECT app_name, COUNT(category) AS count FROM analytics
+GROUP BY category;
+SELECT category, COUNT(app_name) AS count FROM analytics
+GROUP BY category;
+SELECT category, COUNT(app_name) AS count FROM analytics
+GROUP BY category ASC;
+SELECT category, COUNT(app_name) AS count FROM analytics
+ORDER BY category;
+SELECT category, COUNT(app_name) AS count FROM analytics
+GROUP BY category
+ORDER BY count;
+SELECT category, COUNT(app_name) AS count FROM analytics
+GROUP BY category
+ORDER BY count DESC;
+GROUP BY category
+ORDER BY count DESC;
+SELECT * FROM analytics
+WHERE last_updated > '2018-08-01';
+SELECT * FROM analytics
+WHERE last_updated > '2018-08-01';
+SELECT * FROM analytics
+ORDER BY reviews DESC
+LIMIT 5;
+SELECT * FROM analytics
+WHERE rating >= 4.8
+ORDER BY reviews DESC
+LIMIT 3;
+SELECT category, AVG(rating) FROM analytics
+GROUP BY category
+ORDER BY AVG(rating) DESC;
+SELECT category, ROUND(AVG(rating), 2) AS avg FROM analytics
+GROUP BY category
+ORDER BY AVG(rating) DESC;
+SELECT category, ROUND(AVG(rating), 2) FROM analytics
+GROUP BY category
+ORDER BY AVG(rating) DESC;
+SELECT category, ROUND(AVG(rating), 2) FROM analytics
+GROUP BY category
+ORDER BY AVG(rating) DESC;
+SELECT category, AVG(rating) AS avg FROM analytics
+GROUP BY category
+ORDER BY ROUND(avg, 2) DESC;
+SELECT category, AVG(rating) AS avg FROM analytics
+GROUP BY category
+ORDER BY avg DESC;
+SELECT category, ROUND(AVG(rating), 2) FROM analytics
+GROUP BY category
+ORDER BY AVG(rating) DESC;
+SELECT ROUND(AVG(rating), 2), category FROM analytics
+GROUP BY category
+ORDER BY AVG(rating) DESC;
+SELECT ROUND(AVG(rating), 2), category FROM analytics
+GROUP BY category
+ORDER BY AVG(rating) DESC;
+SELECT category, ROUND(AVG(rating), 2) FROM analytics
+GROUP BY category
+ORDER BY AVG(rating) DESC;
+SELECT ROUND(rating, 2) FROM analytics;
+SELECT AVG(rating) FROM analytics;
+SELECT ROUND(rating, -3) FROM analytics;
+ROUND(10.28, 2)
+;
+SELECT ROUND(10.4532, 2);
+SELECT ROUND(AVG(rating), 2) FROM analytics;
+SELECT ROUND(AVG(rating)) FROM analytics;
+SELECT ROUND(AVG(rating), '2') FROM analytics;
+SELECT ROUND(AVG(rating)) FROM analytics;
+SELECT ROUND(AVG(rating), -2) FROM analytics;
+SELECT ROUND(AVG(rating), 4) FROM analytics;
+SELECT category, ROUND(AVG(rating)) AS avg FROM analytics
+GROUP BY category
+ORDER BY avg DESC;
+SELECT app_name, price, rating FROM analytics
+WHERE rating < 3
+ORDER BY price DESC
+LIMIT 3;
+SELECT app_name, price, rating FROM analytics
+WHERE rating < 3
+MAX price;
+SELECT app_name, price, rating FROM analytics
+WHERE rating < 3
+MAX(price);
+SELECT app_name, MAX(price), rating FROM analytics
+WHERE rating < 3;
+SELECT app_name, MAX(price), rating FROM analytics
+WHERE rating < 3
+SELECT app_name, price, rating FROM analytics
+WHERE rating < 3 AND MAX(price);
+SELECT app_name, MAX(price), rating FROM analytics
+WHERE rating < 3
+SELECT app_name, price, rating FROM analytics
+WHERE rating < 3;
+SELECT app_name, price, rating FROM analytics
+WHERE rating < 3
+SELECT app_name, price, rating FROM analytics
+WHERE rating < 3 AND MAX(price);
+SELECT app_name, price, rating FROM analytics;
+SELECT app_name, price, rating FROM analytics
+WHERE rating < 3 AND MAX(price)
+;
+SELECT app_name, price, rating FROM analytics
+WHERE rating < 3
+ORDER BY MAX(price);
+SELECT app_name, MAX(price) AS max, rating FROM analytics
+WHERE rating < 3;
+SELECT app_name, MAX(price) AS max, rating FROM analytics
+WHERE rating < 3
+GROUP BY app_name;
+SELECT app_name, MAX(price) AS max, rating FROM analytics
+WHERE rating < 3
+GROUP BY app_name, rating;
+SELECT app_name, MAX(price) AS max, rating FROM analytics
+WHERE rating < 3
+GROUP BY app_name, rating
+SELECT MAX(price) FROM analytics
+;
+SELECT app_name, MAX(price) AS max, rating FROM analytics
+WHERE rating < 3
+GROUP BY app_name, rating
+SELECT MAX(price) AS price FROM analytics
+;
+SELECT app_name, MAX(price) AS max, rating FROM analytics
+WHERE rating < 3
+GROUP BY app_name, rating
+SELECT MAX(price) AS max FROM analytics;
+SELECT MAX(price) AS max FROM analytics;
+SELECT MAX(price) AS max FROM analytics
+WHERE rating < 3;
+SELECT app_name, rating, MAX(price) AS max FROM analytics
+WHERE rating < 3;
+SELECT app_name, MAX(price) AS max FROM analytics
+WHERE rating < 3;
+SELECT app_name, MAX(price) AS max FROM analytics
+WHERE rating < 3
+GROUP BY app_name;
+SELECT app_name, MAX(price) AS max FROM analytics
+WHERE rating < 3
+GROUP BY app_name
+ORDER BY rating DESC
+LIMIT 3;
+SELECT app_name, rating, MAX(price) AS max FROM analytics
+WHERE rating < 3
+GROUP BY app_name, rating
+ORDER BY rating DESC
+LIMIT 3;
+SELECT app_name, rating, MAX(price) AS max FROM analytics
+WHERE rating < 3
+GROUP BY app_name, rating
+ORDER BY max DESC
+LIMIT 3;
+SELECT app_name, rating, MAX(price) AS max FROM analytics
+WHERE rating < 3
+GROUP BY app_name, rating
+ORDER BY max DESC
+LIMIT 1;
+SELECT * FROM analytics;
+SELECT * FROM analytics
+WHERE min_installs < 50;
+SELECT * FROM analytics
+WHERE min_installs < 50
+ORDER BY rating DESC;
+SELECT * FROM analytics
+WHERE min_installs < 50
+ORDER BY rating DESC;
+SELECT * FROM analytics
+WHERE min_installs < 50 AND rating <= 5
+ORDER BY rating DESC;
+SELECT * FROM analytics
+WHERE min_installs < 50 AND rating <= 5
+ORDER BY rating DESC;
+SELECT app_name FROM analytics
+WHERE rating < 3 AND reviews >= 10000;
+SELECT * FROM analytics
+WHERE price BETWEEN 0.10 AND 1
+ORDER BY reviews DESC
+LIMIT 10;
+\q
+\d
+\dt
+SELECT title, name
+FROM movies
+JOIN studios
+ON studios.id = movies.studio_id;
+SELECT title, name
+FROM movies
+INNER JOIN studios
+ON studios.id = movies.studio_id;
+SELECT title, name
+FROM movies
+INNER JOIN studios
+ON studios.id = movies.studio_id;
+SELECT title, studio_name
+FROM movies
+INNER JOIN studios
+ON studios.id = movies.studio_id;
+SELECT title, name
+FROM movies
+INNER JOIN studios
+ON studios.id = movies.studio_id;
+SELECT *
+FROM movies
+INNER JOIN studios
+ON studios.id = movies.studio_id;
+SELECT title, release_year, runtime, rating, name
+FROM movies
+INNER JOIN studios
+ON studios.id = movies.studio_id;
+SELECT title, release_year, runtime, rating, name
+FROM movies
+LEFT JOIN studios
+ON studios.id = movies.studio_id;
+select * from roles
+;
+select * from actors;
+SELECT title, first_name, last_name
+FROM movies
+JOIN roles
+ON movies.id = roles.movie_id
+JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+LEFT JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+RIGHT JOIN roles
+ON movies.id = roles.movie_id
+RIGHT JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+RIGHT JOIN roles
+ON movies.id = roles.movie_id
+LEFT JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+RIGHT JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+JOIN roles
+ON movies.id = roles.movie_id
+RIGHT JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+JOIN roles
+ON movies.id = roles.movie_id
+LEFT JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+JOIN actors
+ON roles.actor_id = actors.id;
+SELECT a.id, a.first_name, a.last_name
+ FROM movies AS m
+   JOIN roles AS r
+     ON m.id = r.movie_id
+   JOIN actors AS a
+     ON r.actor_id = a.id
+ GROUP BY a.id, a.first_name, a.last_name
+ HAVING count(*) >= 2;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+RIGHT JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+FULL JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+JOIN roles
+ON movies.id = roles.movie_id
+FULL JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+FULL JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+FULL JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+RIGHT JOIN actors
+ON roles.actor_id = actors.id;
+SELECT title, first_name, last_name
+FROM movies
+LEFT JOIN roles
+ON movies.id = roles.movie_id
+FULL JOIN actors
+ON roles.actor_id = actors.id;
+\q
+\d
+\dt
+SELECT * FROM vehicles
+;
+slect * from owners
+;
+select * from owners;
+select * from vehicles
+full join owners
+where vehicles.owner_id = owners.id;
+select * from vehicles
+full join owners
+ON vehicles.owner_id = owners.id;
+SELECT o.first_name, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+GROUP BY o.first_name
+ORDER BY o.first_name;
+SELECT o.first_name, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+ORDER BY o.first_name;
+SELECT o.first_name, AVG(price) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+ORDER BY o.first_name DESC
+HAVING count > 1 AND avg > 10000;
+SELECT o.first_name, AVG(price) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.idGROUP BY o.first_name
+ORDER BY o.first_name DESC
+HAVING count > 1 AND avg > 10000
+SELECT o.first_name, AVG(price) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+ORDER BY o.first_name DESC
+HAVING count > 1 AND avg > 10000;
+SELECT o.first_name, AVG(price) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+ORDER BY o.first_name;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+ORDER BY o.first_name;
+[A\q
+SELECT o.first_name, AVG(price) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+ORDER BY o.first_name;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+ORDER BY o.first_name;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+ORDER BY o.first_name;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+HAVING count > 1 ORDER BY o.first_name;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+HAVING COUNT(*) > 1 ORDER BY o.first_name;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+HAVING COUNT(*) > 1 AND avg > 10000 ORDER BY o.first_name;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+HAVING COUNT(*) > 1 AND ROUND(AVG(price)) > 10000 ORDER BY o.first_name;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+HAVING COUNT(*) > 1 AND ROUND(AVG(price)) > 10000 ORDER BY o.first_name DESC;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+HAVING COUNT(*) > 1 AND ROUND(AVG(price)) > 10000 ORDER BY o.first_name DESC;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+LEFT JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+HAVING COUNT(*) > 1 AND ROUND(AVG(price)) > 10000 ORDER BY o.first_name DESC;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+RIGHT JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+HAVING COUNT(*) > 1 AND ROUND(AVG(price)) > 10000 ORDER BY o.first_name DESC;
+SELECT o.first_name, ROUND(AVG(price)) AS avg, COUNT(*) AS count FROM vehicles AS v
+JOIN owners AS o
+ON v.owner_id = o.id GROUP BY o.first_name
+HAVING COUNT(*) > 1 AND ROUND(AVG(price)) > 10000 ORDER BY o.first_name DESC;
+select current_date;
+select current_timestamp
+;
+SELECT current_timstamp_with_time_zone;
+SELECT current_timstamp;
+SELECT current_timestamp;
+select current_timestamp from dual;
+select current_timestamp, sessiontimezone;
+select localtimestamp
+;
+select numberic();
+select numeric();
+select numeric(10, 2);
+SELECT first_name, COUNT(*) FROM owners
+GROUP BY first_name;
+SELECT first_name, COUNT(*) FROM vehicles
+GROUP BY first_name;
+SELECT first_name, COUNT(*) FROM vehicles
+GROUP BY first_name
+;
+SELECT first_name, COUNT(*) FROM vehicles
+JOIN owners
+ON vehicles.owner_id = owners.id
+GROUP BY first_name
+ORDER BY COUNT(*);
+SELECT first_name, COUNT(*) FROM vehicles
+RIGHT JOIN owners
+ON vehicles.owner_id = owners.id
+GROUP BY first_name
+ORDER BY COUNT(*);
+SELECT first_name, COUNT(owner_id) AS count FROM vehicles
+RIGHT JOIN owners
+ON vehicles.owner_id = owners.id
+GROUP BY first_name
+ORDER BY COUNT(owner_id);
+SELECT first_name, COUNT(owner_id) AS count FROM vehicles
+RIGHT JOIN owners
+ON vehicles.owner_id = owners.id
+GROUP BY COUNT(owner_id)
+ORDER BY COUNT(owner_id);
+SELECT first_name, COUNT(owner_id) AS count FROM vehicles
+RIGHT JOIN owners
+ON vehicles.owner_id = owners.id
+GROUP BY owners.id
+ORDER BY COUNT(owner_id);
+SELECT first_name, COUNT(owner_id) AS count FROM vehicles
+RIGHT JOIN owners
+ON vehicles.owner_id = owners.id
+GROUP BY owners.id
+ORDER BY COUNT(owner_id);
+\q
+\dt
+SELECT * roles
+;
+SELECT * FROM roles;
+SELECT * FROM actors;
+\q
+psql > movies_tbe.sql
+;
+\q
+\?
+\q
+\dt
+\d
+\q
+\d
+\dt
+SELECT * FROM moons
+;
+SELECT * FROM planets
+;
+SELECT * FROM stars;
+SELECT planet_name, star_name, COUNT(planet_orbit)
+FROM stars AS s
+JOIN planets AS p
+ON star_orbit = s.id
+JOIN moons AS m
+ON planet_orbit = p.id
+GROUP BY planet_name, star_name;
+SELECT planet_name, star_name, COUNT(planet_orbit)
+FROM stars AS s
+LEFT JOIN planets AS p
+ON star_orbit = s.id
+FULL JOIN moons AS m
+ON planet_orbit = p.id
+GROUP BY planet_name, star_name;
+SELECT planet_name, star_name, COUNT(planet_orbit)
+FROM stars AS s
+LEFT JOIN planets AS p
+ON star_orbit = s.id
+FULL JOIN moons AS m
+ON planet_orbit = p.id
+GROUP BY planet_name, star_name
+SORT BY planet_name;
+SELECT planet_name, star_name, COUNT(planet_orbit)
+FROM stars AS s
+LEFT JOIN planets AS p
+ON star_orbit = s.id
+FULL JOIN moons AS m
+ON planet_orbit = p.id
+GROUP BY planet_name, star_name
+ORDER BY planet_name;
+SELECT * FROM planets
+;
+ALTER TABLE planets RENAME COLUMN orbital_period TO orbital_period_in_yrs;
+SELECT * FROM planets;
+SELECT planet_name, star_name, COUNT(planet_orbit)
+FROM stars AS s
+LEFT JOIN planets AS p
+ON star_orbit = s.id
+FULL JOIN moons AS m
+ON planet_orbit = p.id
+GROUP BY planet_name, star_name
+ORDER BY planet_name;
+SELECT planet_name, star_name, COUNT(planet_orbit)
+FROM stars AS s
+JOIN planets AS p
+ON star_orbit = s.id
+FULL JOIN moons AS m
+ON planet_orbit = p.id
+GROUP BY planet_name, star_name
+ORDER BY planet_name;
+\q
+\dt
+\d user
+ \dt
+\q
+\dt
+\dt
+\dt
+\d users
+\s
+\q
+\dt
+\dt
+\d users
+\d user
+SELECT * FROM users
+;
+\q
+\q
+\dt
+SELECT * FROM pet
+;
+\q
+\dt
+drop table pet
+;
+\dt
+SELECT * FROM pets;
+\q
+SELECT * FROM pets;
+\q
+\dt
+\dt
+\q
+\dt
+hhhhhahahahah i mack no gf any more  i dump ur a$$
+;
+\dt
+\dt
+\q
+\dt
+\d movies
+SELECT title FROM movies;
+\d movies
+SELECT * FROM movies
+;
+SELECT * FROM movies
+WHERE rating ='G';
+SELECT title, release_year FROM movies
+ORDER BY title DESC;
+SELECT title, release_year FROM movies
+ORDER BY release_year DESC;
+SELECT title, release_year FROM movies
+ORDER BY release_year;
+SELECT * FROM movies
+;
+SELECT * FROM movies
+ORDER BY runtime DESC
+LIMIT 5;
+SELECT rating, COUNT(rating) AS total FROM movies;
+SELECT rating, COUNT(rating) AS total FROM movies
+GROUP BY rating;
+SELECT release_year, AVG(runtime) AS average_runtime FROM movies
+GROUP BY release_year
+ORDER BY release_year DESC;
+SELECT release_year, ROUND(AVG(runtime), 2) AS average_runtime FROM movies
+GROUP BY release_year
+ORDER BY release_year DESC;
+SELECT * FROM movies;
+SELECT * FROM studios
+;
+SELECT m.title, s.name FROM movies AS m
+JOIN studios AS s
+ON s.id = m.studio_id;
+SELECT m.title AS movie_title, s.name AS studio_name FROM movies AS m
+JOIN studios AS s
+ON s.id = m.studio_id;
+SELECT * FROM stars
+;
+SELECT * FROM movies LIMIT 5;
+\dt
+SELECT * FROM roles;
+SELECT * FROM roles LIMIT 5;
+SELECT * FROM movies LIMIT 5;
+SELECT * FROM stars LIMIT 5;
+SELECT m.title AS movie_title, s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+JOIN stars AS s
+ON s.id = r.star_id;
+SELECT * FROM movies LIMIT 5;
+SELECT * FROM stars LIMIT 5;
+SELECT * FROM roles LIMIT 5;
+SELECT m.title AS movie_title, s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, UNIQUE(s.first_name), s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, UNIQUE s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, DISTINCT(s.first_name), s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, DISTINCT s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, (DISTINCT s.first_name), s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, DISTINCT ON (s.first_name), s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G';
+SELECT m.title AS movie_title, s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G'
+GROUP BY first_name, last_name;
+SELECT m.title AS movie_title, s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G'
+GROUP BY s.first_name, s.last_name;
+SELECT s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G'
+GROUP BY s.first_name, s.last_name;
+SELECT s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+RIGHT JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G'
+GROUP BY s.id;
+SELECT s.first_name, s.last_name FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+JOIN stars AS s
+ON s.id = r.star_id
+WHERE rating = 'G'
+GROUP BY s.id;
+SELECT s.first_name, s.last_name, COUNT(title) AS num_movies_appearing FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY s.id;
+SELECT s.first_name, s.last_name, COUNT(title) AS num_movies_appearing FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY s.id
+ORDER BY COUNT(title) DESC;
+SELECT m.title AS movie_title, s.name AS studio_name FROM movies AS m
+JOIN studios AS s
+ON s.id = m.studio_id;
+SELECT m.title AS movie_title, s.name AS studio_name FROM movies AS m
+LEFT JOIN studios AS s
+ON s.id = m.studio_id;
+psql
+;
+\q
+\dt
+-l
+;
+list
+;
+\q
+\c movies_assessment
+\q
+\dt
+SELECT * FROM playlists_songs
+;
+SELECT * FROM playlists_songs;
+SELECT m.title, COUNT(s.id) AS num_stars FROM movies
+;
+\dt
+\q
+SELECT m.title, COUNT(s.id) AS num_stars FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id;
+SELECT m.title, COUNT(s.id) AS num_stars FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY m.title;
+SELECT m.title, COUNT(s.id) AS num_stars FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY m.title
+ORDER BY num_stars DESC;
+SELECT s.first_name, s.last_name, COUNT(title) AS num_movies_appearing FROM movies AS m
+JOIN roles as r
+ON m.id = r.movie_id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY s.id
+ORDER BY num_movies_appearing DESC;
+SELECT m.title, COUNT(s.id) AS num_stars FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY m.title
+ORDER BY num_stars DESC;
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY s.id
+ORDER BY avg_runtime DESC
+LIMIT 5;
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+WHERE COUNT(m.title) > 1
+GROUP BY s.id
+ORD
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY s.id HAVING COUNT(m.title) > 1
+ORDER BY avg_runtime DESC
+LIMIT 5;
+SELECT title, first_name FROM movies
+JOIN roles ON movies.id = roles.movie_id
+JOIN stars ON stars.id = roles.star_id
+WHERE first_name = "Kate"
+;
+SELECT title, first_name FROM movies
+JOIN roles ON movies.id = roles.movie_id
+JOIN stars ON stars.id = roles.star_id
+WHERE first_name = 'Kate';
+SELECT title, first_name, last_name FROM movies
+JOIN roles ON movies.id = roles.movie_id
+JOIN stars ON stars.id = roles.star_id
+WHERE first_name = 'Kate';
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY s.id HAVING COUNT(m.title) > 1
+ORDER BY avg_runtime DESC
+LIMIT 5;
+SELECT m.title FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+HAVING COUNT(m.title) = 0;
+SELECT m.title FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title
+HAVING COUNT(m.title) = 0;
+SELECT m.title FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title;
+SELECT m.title FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title
+HAVING COUNT(m.title) = 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title
+HAVING COUNT(m.title) = 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 3;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 5;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 9;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 2;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 3;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 2;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(m.title) = 0;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(s.id) = 0;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(s.id) = 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(s.id) = 2;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(s.first_name) = 2;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(s.first_name) = '2';
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(s.first_name) > '2';
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+LEFT JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(s.first_name) > 2;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(*) > 2;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.title, s.id
+HAVING COUNT(*) > 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY s.id
+HAVING COUNT(m.title) > 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.id
+HAVING COUNT(m.title) > 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.id
+HAVING COUNT(s.title) > 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.id
+HAVING COUNT(s.id) > 1;
+SELECT m.title, s.first_name, s.last_name FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON s.id = r.star_id
+GROUP BY m.id, s.id
+HAVING COUNT(s.id) > 1;
+SELECT m.title FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id; 
+SELECT m.title FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id; 
+SELECT m.title FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id 
+GROUP BY m.title
+HAVING COUNT(r.movie_id) > 1;
+SELECT m.title FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id 
+GROUP BY m.title
+HAVING COUNT(r.movie_id) > 5;
+SELECT m.title FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id 
+GROUP BY m.title
+HAVING COUNT(r.movie_id) > 3;
+SELECT m.title FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id 
+GROUP BY m.title
+HAVING COUNT(r.movie_id) < 1;
+SELECT m.title, r.movie_id FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id 
+GROUP BY m.title
+HAVING COUNT(r.movie_id) < 1;
+SELECT m.title, r.movie_id FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id 
+GROUP BY m.title, r.movie_id
+HAVING COUNT(r.movie_id) < 1;
+SELECT m.title, r.movie_id FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id 
+GROUP BY m.title, r.movie_id;
+SELECT m.title, r.movie_id FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id 
+GROUP BY m.title, r.movie_id
+HAVING COUNT(r.movie_id) < 1;
+SELECT m.title FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id 
+GROUP BY m.title
+HAVING COUNT(r.movie_id) = 0;
+SELECT s.first_name, s.last_name FROM movies AS m
+JOIN roles
+;
+SELECT s.first_name, s.last_name FROM stars AS s
+JOIN roles AS r
+ON r.star_id = s.id;
+SELECT s.first_name, s.last_name FROM stars AS s
+LEFT JOIN roles AS r
+ON r.star_id = s.id
+GROUP BY s.first_name, s.last_name;
+SELECT s.first_name, s.last_name FROM stars AS s
+LEFT JOIN roles AS r
+ON r.star_id = s.id
+GROUP BY s.first_name, s.last_name
+HAVING COUNT(r.id) = 0;
+SELECT s.first_name, s.last_name, m.title FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id
+RIGHT JOIN stars AS s
+ON r.star_id = s.id;
+SELECT s.first_name, s.last_name, m.title FROM movies AS m
+LEFT JOIN roles AS r
+ON r.movie_id = m.id
+FULL JOIN stars AS s
+ON r.star_id = s.id;
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY s.id 
+HAVING COUNT(m.title) > 1
+ORDER BY avg_runtime DESC
+LIMIT 5;
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY s.id 
+HAVING COUNT(m.title) > 5
+ORDER BY avg_runtime DESC
+LIMIT 5;
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY s.id 
+HAVING COUNT(m.title) > 8
+ORDER BY avg_runtime DESC
+LIMIT 5;
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY s.id 
+HAVING COUNT(m.title) > 9
+ORDER BY avg_runtime DESC
+LIMIT 5;
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY s.id 
+HAVING COUNT(m.title) > 7
+ORDER BY avg_runtime DESC
+LIMIT 5;
+SELECT s.first_name, s.last_name, ROUND(AVG(runtime), 2) AS avg_runtime
+FROM movies AS m
+JOIN roles AS r
+ON r.movie_id = m.id
+JOIN stars AS s
+ON r.star_id = s.id
+GROUP BY s.id 
+HAVING COUNT(m.title) > 6
+ORDER BY avg_runtime DESC
+LIMIT 5;
+\q
+\q
+\dt
+SELECT * FROM cupcakes
+;
+SELECT * FROM cupcakes;
+\q
+\dt
+SELECT * FROM cupcakes
+;
+\q
+-l
+;
+-list;
+\q
+SELECT * FROM cupcakes
+;
+SELECT * FROM cupcakes;
+SELECT * FROM cupcakes;
+\c cupcakes_test
+\dt
+SELECT * FROM cupcakes;
+\q
+SELECT * FROM cupcakes
+;
+drop database
+;
+\q
+\dt
+SELECT * FROM cupcakes;
+SELECT * FROM cupcakes;
+SELECT * FROM cupcakes;
+SELECT * FROM cupcakes;
+SELECT * FROM cupcakes;
+SELECT * FROM cupcakes;
+SELECT * FROM cupcakes;
+\q
+SELECT * FROM cupcakes
+;
+SELECT * FROM cupcakes
+;
+\q
+SELECT * FROM cupcakes;
+SELECT * FROM cupcakes;
+\q
+SELECT * FROM notes
+;
+SELECT * FROM \q
+\dt
+drop table user
+;
+droptable user
+;
+drop table user
+;
+drop table user;
+\dt
+SELECT * FROM user
+;
+\q
+\dt
+\q
+\dt
+SELECT * FROM users;
+SELECT * FROM users;
+\q
+SELECT * FROM users;
+\q
+\dt
+SELECT * FROM follows
+;
+SELECT * FROM users;
+\q
+SELECT * FROM follows;
+SELECT * FROM users;
+SELECT * FROM users
+JOIN follows
+;
+SELECT * FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id == u.id;
+SELECT * FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = u.id;
+SELECT * FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = u.id;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = u.id;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = u.id
+JOIN users AS u2
+ON f.user_following_id = u.id;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = u.id
+JOIN users AS u2
+ON f.user_following_id = u2.id;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = u.id
+JOIN users AS u2
+ON f.user_following_id = u2.id;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = 179
+JOIN users AS u2
+ON f.user_following_id = u2.id;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = 179
+JOIN users AS u2
+ON f.user_following_id = 179;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = 179;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = 179;
+SELECT u.id, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_following_id = 179;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_following_id = 179;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_following_id = 179
+JOIN user
+;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_following_id = 179
+JOIN user AS u2
+ON f.user_being_followed_id = 179;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_following_id = 179
+JOIN user AS u2
+ON f.user_being_followed_id = u2.id;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_following_id = 179
+JOIN user AS u2
+ON f.user_being_followed_id = u.id;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_following_id = 179
+JOIN user AS u2
+ON f.user_being_followed_id = u.id;
+SELECT u.username, f.user_being_followed_id, f.user_following_id FROM users AS u
+JOIN follows AS f
+ON f.user_being_followed_id = 179
+JOIN user AS u2
+ON f.user_following_id = u.id;
+\q
+\dt
+SELECT * FROM messages
+;
+SELECT * FROM messages;
+\q
+SELECT * FROM likes;
+SELECT * FROM likes;
+SELECT * FROM likes;
+SELECT * FROM messages;
+SELECT * FROM messages;
+SELECT * FROM messages
+WHERE users.id = 301;
+\dt
+\q
+\dt
+\q
+\dt
+\q
+\dt
+SELECT * FROM users;
+INSERT INTO direct_messages (user_from_id=1, user_to_id=2, msg="hey");
+INSERT INTO direct_messages (user_from_id, user_to_id, msg);
+INSERT INTO direct_messages (user_from_id, user_to_id, msg)
+VALUES (1, 2, "hello");
+INSERT INTO direct_messages (user_from_id, user_to_id, msg)
+VALUES (1, 2, 'hello');
+INSERT INTO direct_messages (user_from_id, user_to_id, msg, timestamp)
+VALUES (1, 2, "hello");
+INSERT INTO direct_messages (user_from_id, user_to_id, msg, timestamp)
+VALUES (1, 2, 'hello');
+INSERT INTO direct_messages (user_from_id, user_to_id, msg, timestamp)
+VALUES (1, 2, 'hello', default);
+INSERT INTO direct_messages (user_from_id, user_to_id, msg, timestamp)
+VALUES (1, 2, 'hello', 24);
+INSERT INTO direct_messages (user_from_id, user_to_id, msg, timestamp)
+VALUES (1, 2, 'hello', 2020-08-08);
+INSERT INTO direct_messages (user_from_id, user_to_id, msg)
+VALUES (1, 2, 'hello');
+\q
+\dt
+\d direct_messages
+drop table direct_messages
+;
+create table direct_messages
+;
+create table direct_messages;
+\q
+\d direct_messages
+INSERT INTO direct_messages (user_from_id, user_to_id, msg)
+VALUES (1, 2, 'hello');
+SELECT * FROM direct_messages
+;
+INSERT INTO direct_messages (user_from_id, user_to_id, msg)
+VALUES (2, 1, 'hey2');
+SELECT * FROM direct_messages
+;
+\q
+\d direct_messages
+drop table direct_messages 
+;
+\q
+\dt
+\q
+\dt
+\d direct_messages
+SELECT * FROM direct_messages
+;
+\q
+SELECT * FROM direct_messages;
+\q
+\dt
+\s users

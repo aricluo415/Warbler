@@ -1,0 +1,85 @@
+{% extends 'base.html' %} {% block content %}
+<div id="warbler-hero" class="full-width row-fluid" style="background-image: url('{{user.header_image_url}}')"></div>
+<img src="{{ user.image_url }}" alt="Image for {{ user.username }}" id="profile-avatar">
+<div class="row full-width">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-9">
+                <ul class="user-stats nav nav-pills">
+                    <li class="stat">
+                        <p class="small">Messages</p>
+                        <h4>
+                            <a href="/users/{{ user.id }}">{{ user.messages | length }}</a>
+                        </h4>
+                    </li>
+                    <li class="stat">
+                        <p class="small">Following</p>
+                        <h4>
+                            <a href="/users/{{ user.id }}/following">{{ user.following | length }}</a>
+                        </h4>
+                    </li>
+                    <li class="stat">
+                        <p class="small">Followers</p>
+                        <h4>
+                            <a href="/users/{{ user.id }}/followers">{{ user.followers | length }}</a>
+                        </h4>
+                    </li>
+                    <li class="stat">
+                        <p class="small">Likes</p>
+                        <h4>
+                            <a href="/users/{{ user.id }}/likes">{{ user.liked_messages | length }}</a>
+                        </h4>
+                    </li>
+                    <div class="ml-auto">
+                        <a href="/admin/edit/users/{{ user.id }}" class="btn btn-outline-secondary">Edit Profile</a>
+                        <form method="POST" action="/admin/delete/users/{{ user.id }}" class="form-inline">
+                            <button class="btn btn-outline-danger ml-2">Delete Profile</button>
+                        </form>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        <h4 id="sidebar-username">@{{ user.username }}</h4>
+        {% if user.bio %}
+        <p>{{ user.bio }}</p>
+        {% endif %} {% if user.location %}
+        <p class="user-location"><span class="fa fa-map-marker"></span>{{user.location}}</p>
+        {% endif %}
+    </div>
+
+    {% block user_details %}
+    <div class="col-sm-6">
+        <ul class="list-group" id="messages">
+
+            {% for message in user.messages %}
+
+            <li class="list-group-item mt-2">
+                <a href="/admin/users/{{ user.id }}/messages/{{ message.id }}" class="message-link">
+
+                    <a href="/admin/users/{{ user.id }}">
+                        <img src="{{ user.image_url }}" alt="user image" class="timeline-image">
+                    </a>
+
+                    <div class="message-area">
+                        <a href="/admin/users/{{ user.id }}">@{{ user.username }}</a>
+                        <span class="text-muted">
+                  {{ message.timestamp.strftime('%d %B %Y') }}
+                </span>
+                        <p>{{ message.text }}</p>
+                    </div>
+                    <!-- <form action="">
+                        <button class="btn btn-info btn-sm">edit</button>
+                    </form> -->
+            </li>
+
+            {% endfor %}
+
+        </ul>
+    </div>
+    {% endblock %}
+</div>{% endblock %}
